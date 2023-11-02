@@ -13,9 +13,9 @@ public class UserRepository {
     private HashMap<String, String> users = new HashMap<>();
 
     public UserRepository() {
-        users.put("admin1", "qwerty");
-        users.put("admin2", "qwerty2");
-        users.put("admin3", "qwerty3");
+        users.put("admin1", "qwerty1234");
+        users.put("admin2", "qwerty2345");
+        users.put("admin3", "qwerty3456");
     }
 
 
