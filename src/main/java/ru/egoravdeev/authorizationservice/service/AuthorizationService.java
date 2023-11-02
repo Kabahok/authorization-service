@@ -12,8 +12,11 @@ import java.util.List;
 @Service
 public class AuthorizationService {
 
-    @Autowired
-    UserRepository repository;
+    private final UserRepository repository;
+
+    public AuthorizationService(UserRepository repository) {
+        this.repository = repository;
+    }
 
     public List<Authorities> getAuthorities(String user, String password) {
         if (isEmpty(user) || isEmpty(password)) {

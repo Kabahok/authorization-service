@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public class UserRepository {
 
-    HashMap<String, String> users = new HashMap<>();
+    private HashMap<String, String> users = new HashMap<>();
 
     public UserRepository() {
         users.put("admin1", "qwerty");
