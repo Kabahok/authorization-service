@@ -5,12 +5,12 @@ import jakarta.validation.constraints.Size;
 
 public class User {
 
-    @NotEmpty()
-    @Size(min=4, max=15)
+    @NotEmpty(message = "Имя пользователя не должно быть пустым или содержать только пробелы")
+    @Size(min=4, max=15, message = "Недопустимый размер имени")
     private String user;
 
-    @NotEmpty()
-    @Size(min=8, max=20)
+    @NotEmpty(message = "Пароль не должен быть пустым или содержать только пробелы")
+    @Size(min=8, max=20, message = "Недопустимый размер пароля")
     private String password;
 
     public User(String user, String password) {

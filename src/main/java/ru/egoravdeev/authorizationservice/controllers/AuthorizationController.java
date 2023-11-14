@@ -1,5 +1,6 @@
 package ru.egoravdeev.authorizationservice.controllers;
 
+import jakarta.validation.Valid;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import ru.egoravdeev.authorizationservice.service.AuthorizationService;
 
 import java.util.List;
 
+@Validated
 @RestController
 public class AuthorizationController {
 
@@ -21,7 +23,7 @@ public class AuthorizationController {
 
 
     @GetMapping("/authorize")
-    public List<Authorities> getAuthorities(@AuthUser @Validated User user) {
+    public List<Authorities> getAuthorities(@AuthUser @Valid User user) {
         System.out.println(user.getUser() + " " + user.getPassword());
         return service.getAuthorities(user.getUser(), user.getPassword());
     }
