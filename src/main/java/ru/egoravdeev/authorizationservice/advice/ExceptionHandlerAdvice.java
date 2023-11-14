@@ -10,6 +10,11 @@ import ru.egoravdeev.authorizationservice.exception.UnauthorizedUser;
 @RestControllerAdvice
 public class ExceptionHandlerAdvice {
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> exceptionHandler(Exception e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.I_AM_A_TEAPOT);
+    }
+
     @ExceptionHandler(InvalidCredentials.class)
     public ResponseEntity<String> invalidCredentialsHandler(InvalidCredentials e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
